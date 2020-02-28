@@ -36,7 +36,8 @@ func addSend(topLevel *cobra.Command) {
 			if oo.JSON {
 				s.Output = "json"
 			}
-			return s.Do(context.Background())
+			err := s.Do(context.Background())
+			return oo.HandleError(err)
 		},
 	}
 

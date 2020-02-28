@@ -35,7 +35,8 @@ func addChannelGet(topLevel *cobra.Command) {
 			if oo.JSON {
 				c.Output = "json"
 			}
-			return c.Do(context.Background())
+			err := c.Do(context.Background())
+			return oo.HandleError(err)
 		},
 	}
 	options.AddOutputArg(cmd, oo)
@@ -55,7 +56,8 @@ func addDirectMessageGet(topLevel *cobra.Command) {
 			if oo.JSON {
 				c.Output = "json"
 			}
-			return c.Do(context.Background())
+			err := c.Do(context.Background())
+			return oo.HandleError(err)
 		},
 	}
 	options.AddOutputArg(cmd, oo)
