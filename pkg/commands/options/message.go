@@ -14,7 +14,7 @@ type MessageOptions struct {
 
 func AddMessageArgs(cmd *cobra.Command, o *MessageOptions) {
 	cmd.Flags().BoolVar(&o.Reaction, "reaction", false,
-		"Message is treated as a reaction.")
+		"Message is treated as a reaction to be added.")
 	cmd.Flags().BoolVar(&o.RemoveReaction, "remove-reaction", false,
-		"Message is treated as a reaction to remove.")
+		"Message is treated as a reaction to be removed.")
 }

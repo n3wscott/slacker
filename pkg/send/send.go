@@ -54,7 +54,7 @@ func (c *Send) Do(ctx context.Context) error {
 
 	var err error
 	var resp *slackbot.SlackPostResponse
-	if c.Reaction || c.RemoveReaction {
+	if c.RemoveReaction {
 		resp, err = sb.RemoveReaction(ctx, c.ChannelID, c.ThreadID, c.Message)
 		if err != nil {
 			return err
