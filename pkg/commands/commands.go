@@ -22,6 +22,4 @@ func New() *cobra.Command {
 func AddCommands(topLevel *cobra.Command) {
 	addList(topLevel)
 	addSend(topLevel)
-
-	addHelp(topLevel)
 }

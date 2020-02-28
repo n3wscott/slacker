@@ -15,6 +15,7 @@ func addSend(topLevel *cobra.Command) {
 
 	cmd := &cobra.Command{
 		Use:       "send",
+		Short:     "Send a message or response to a channel or thread.",
 		ValidArgs: []string{},
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {

@@ -11,6 +11,7 @@ import (
 func addList(topLevel *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:       "get",
+		Short:     "Get a list of channels or direct messages.",
 		ValidArgs: []string{},
 		Run: func(cmd *cobra.Command, args []string) {
 			_ = cmd.Help()
@@ -48,7 +49,7 @@ func addDirectMessageGet(topLevel *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:       "dm",
 		ValidArgs: []string{},
-		Short:     "Get a list of direct messages.",
+		Short:     "Get a list of direct message channels.",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c := directs.Directs{
 				List: true,
